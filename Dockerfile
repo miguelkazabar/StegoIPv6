@@ -5,8 +5,7 @@ WORKDIR /opt/stegoipv6
 COPY CMakeLists.txt stegoipv6.h stegoipv6.cpp ./
 
 RUN dnf update -y && \
-    dnf group install "Development Tools" -y && \
-    dnf install git libtool autoconf automake cmake -y && \
+    dnf install gcc-c++ git libtool autoconf automake cmake -y && \
     dnf install cryptopp cryptopp-devel -y && \
     dnf install libpcap-devel -y && \
     git clone https://github.com/pellegre/libcrafter && \
